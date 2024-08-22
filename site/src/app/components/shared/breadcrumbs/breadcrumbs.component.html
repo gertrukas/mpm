@@ -1,0 +1,16 @@
+
+
+
+<section class="breadcrumb flat m-0 p-0">
+    <a class="active" routerLink="/"><span class="text active">Inicio</span></a>&nbsp;
+
+    <span class="-bc" *ngIf="firstItem && search"> Resultados de las búsqueda "{{ firstItem | titlecase }}"</span>
+    <span class="-bc" *ngIf="firstItem && !search && !secondaryItem">{{ firstItem }}</span>
+
+  <a class="active"><span class="text active" *ngIf="secondaryItem && !search" > {{ firstItem }}</span></a>
+  <span class="-bc active" *ngIf="secondaryItem && !search"> {{ secondaryItem }}</span>
+
+
+</section>
+
+

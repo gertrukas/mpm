@@ -1,0 +1,57 @@
+<main>
+
+  <app-breadcrumbs [firstItem]="item" [search]="search"></app-breadcrumbs>
+
+  <section class="pb-3">
+
+    <div class="--titulo">
+      <h1 class="-titulo-seccion">Comunicados</h1>
+    </div>
+
+
+    <div class="&#45;&#45;card -err"  *ngFor="let blog of blogs ">
+      <div class="row">
+
+        <div class="col-md-6">
+          <a [routerLink]="['/blog', blog.slug]">
+            <img [src]="blog._id | image: 'blogs' : blog.image"  [alt]="blog.name" class="img-fluid">
+
+          </a>
+        </div>
+
+        <div class="col-md-6 px-3">
+          <div class="card-body">
+            <h1 class="-titulo">{{blog.name}}</h1>
+
+            <p class="card-text"><small class="text-muted">{{ blog.date | date: 'dd MMM yyyy'}}</small></p>
+
+            <div [innerHTML]="blog.intro | truncate: 200" class="-intro" ></div>
+
+            <div class="text-end">
+              <a [routerLink]="['/blog', blog.slug]" class="btn btn-primary">ver mas</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <mat-spinner *ngIf="isloading"></mat-spinner>
+
+    <div class="text-end m-2">
+      <a (click)="getPlus()" class="-boton-azul btn btn-primary">ver mas comunicados</a>
+    </div>
+
+    <div class="-pub-right text-end end m-2">
+      <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="-boton-azul btn btn-primary">
+        ir al principio <i class="pi pi-arrow-up" style="font-size: 1.0rem"></i>
+
+      </button>
+
+    </div>
+
+
+
+  </section>
+
+</main>

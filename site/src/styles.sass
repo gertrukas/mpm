@@ -1,0 +1,156 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css"
+@import "primeng/resources/primeng.css"
+@import "primeicons/primeicons.css"
+
+@import "../node_modules/bootstrap/scss/bootstrap"
+@import "assets/sass/variables"
+
+
+.-script
+  font-family: "Kalam", cursive
+  font-weight: 300
+  font-style: normal
+
+body
+  color: $-gris
+
+
+.-err
+  border: 1px solid red
+
+.-err-green
+   border: 1px solid green
+
+h1
+  font-size: 34px
+  font-weight: 400
+
+.--servicios
+
+  .__card
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
+    border-radius: 6px
+    position: relative
+
+
+
+//------- botones --------
+//
+//
+//
+
+.-btn-ver-mas, .btn-ver-mas:active, .-btn-ver-mas:visited
+  color: white
+  background-color: $-gris
+  text-decoration: none
+  padding: 8px 28px 8px 28px
+  border-radius: 6px
+  position: absolute
+  bottom: 12px
+  right: 12px
+
+.-btn-ver-mas:hover
+    background-color: #8d8d8d
+
+//------------------------
+
+
+.--card
+  border: 1px solid #d5d8dc
+  border-radius: 10px
+  box-shadow: 6px 6px 6px rgba(0,0,0,0.06)
+  margin: 0 50px 20px 50px !important
+  padding: 16px
+
+
+.-titulo
+  color: $-color10
+  font-weight: bold
+
+.-titulo-seccion
+  color: $-color10
+  font-weight: bold
+  font-size: 4rem
+  text-align: center
+
+.-titulo-gris
+  color: $-gris-claro
+
+.--titulo
+  padding: 2px 20px 1px 0
+  margin-top: 10px
+  margin-bottom: 8px
+  text-align: end
+  border-top: 1px solid $color10-claro
+
+.__titulo
+  color: $-color10
+
+/*  icon sizes */
+span.size-16
+  font-size: 16px
+  font-variation-settings: 'OPSZ' 20
+  text-decoration: underline
+
+
+span.size-20
+  font-size: 20px
+  font-variation-settings: 'OPSZ' 20
+  text-decoration: underline
+
+
+
+
+.--card-azul
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
+    border-radius: 6px
+    background-color: $-color30
+    color: white
+
+
+//// social media icons
+//
+//------------------------------
+
+.whatsapp
+  position: fixed
+  bottom: 0
+  right: 0
+  margin-right: 20px
+  margin-bottom: 20px
+  color: #25d366
+  z-index: 100
+
+.whatsapp-icon
+  background-color: #fff
+  border-radius: 50px
+  font-size: 2.5rem
+
+
+
+
+//grid
+
+.-col-2
+  display: grid
+  width: 100%
+  gap: 0
+  padding: 4px 0 4px 0
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+
+.-col-3
+  display: grid
+  width: 100%
+  gap: 20px
+  padding: 12px 12px 12px 12px
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+
+.-col-4
+  display: grid
+  width: 100%
+  gap: 0
+  padding: 4px 0 4px 0
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))

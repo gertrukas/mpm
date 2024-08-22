@@ -1,0 +1,103 @@
+@import "src/assets/sass/variables"
+
+.breadcrumb
+  width: 100%
+  display: inline-block
+  margin: 0
+  padding: 0
+
+  background-color: $-color30 !important
+  color: white
+
+  a
+      text-decoration: none
+      outline: none
+      display: block
+      float: left
+      font-size: 14px
+      line-height: 36px
+      color: white
+      /*need more margin on the left of links to accomodate the numbers*/
+      padding: 0 10px 0 30px
+      margin-bottom: 0
+      background: $-color30
+      position: relative
+
+      &:hover
+            cursor: pointer
+            color: $-color10
+
+  .-bc
+      text-decoration: none
+      outline: none
+      display: block
+      float: left
+      font-size: 14px
+      line-height: 36px
+      color: white
+      /*need more margin on the left of links to accomodate the numbers*/
+      padding: 0 10px 0 30px
+      background: $-color30
+
+      position: relative
+
+
+.breadcrumb a.active, .breadcrumb a:hover
+     background: #111
+     background: linear-gradient(#333, #111)
+
+.breadcrumb a.active:after, .breadcrumb a:hover:after
+    background: #222
+    background: linear-gradient(145deg, #333, #222)
+
+.breadcrumb a:after
+  content: ''
+  position: absolute
+  top: 0
+  right: -18px /*half of square's length*/
+  /*same dimension as the line-height of .breadcrumb a */
+  width: 36px
+  height: 36px
+
+  transform: scale(0.707) rotate(45deg)
+
+  z-index: 1
+  /*background same as links but the gradient will be rotated to compensate with the transform applied*/
+
+  /*
+    5px - for rounded arrows and
+    50px - to prevent hover glitches on the border created using shadows*/
+  border-radius: 0 5px 0 50px
+  border-top: 3px solid $-color30
+  border-right: 3px solid $-color30
+
+.breadcrumb a:last-child:after
+    content: none
+
+.breadcrumb a:before
+    border-radius: 100%
+    width: 20px
+    height: 20px
+    line-height: 20px
+    margin: 0px 0
+    position: absolute
+    top: 0
+    left: 30px
+    background: #333
+    background: linear-gradient(#333, #300)
+    font-weight: bold
+
+
+.flat a, .flat a:after
+    background: #333333
+    color:#eee
+    transition: all 0.7s
+
+.flat a:before
+      background: #111
+
+
+.flat a:hover, .flat a.active,
+.flat a:hover:after, .flat a.active:after
+      background: #3b5998
+

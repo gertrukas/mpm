@@ -1,0 +1,38 @@
+<app-breadcrumbs [firstItem]="blog.name"></app-breadcrumbs>
+<section class="p-2">
+  <div class="--titulo">
+    <h1 class="-titulo-seccion">{{ blog.name }}</h1>
+  </div>
+
+      <div class="text-center p-2">
+        <img [src]="blog._id | image: 'blogs' : blog.image"  [alt]="blog.name"  class="img-fluid " width="50%" height="auto"  *ngIf="view">
+      </div>
+
+      <div class="row p-4">
+
+        <div [innerHtml]="blog.date | date: 'mediumDate'" class="-nombre" ></div>
+
+        <div [innerHTML]="blog.description" class="-intro" ></div>
+
+        <hr>
+
+          <iframe [src]="linkface"
+                  width="450"
+                  height="35"
+                  style="border:none;
+                      overflow:hidden;
+                      color:white;"
+                  scrolling="no"
+                  frameborder="0"
+                  allowfullscreen="true"
+                  allow="autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      picture-in-picture;
+                      web-share">
+          </iframe>
+
+      </div>
+
+
+</section>

@@ -1,0 +1,184 @@
+<!-- begin::Header -->
+<div class="card-header border-0 pt-5 d-flex justify-content-between">
+    <h3 class="card-title align-items-start flex-column">
+        <span class="card-label fw-bolder fs-3 mb-1">Lista, Creación y Edición de Categorias</span>
+    </h3>
+    <div class="card-toolbar">
+        <button pButton pRipple type="button" icon="pi pi-plus" (click)="created()" label="Crear" class="p-button-rounded p-button-info" ></button>
+    </div>
+</div>
+<button class="d-none" (click)="setUnit()" #btn></button>
+<!-- end::Header -->
+<!-- begin::Body -->
+<div class="card-body py-3">
+    <!-- begin::Table container -->
+    <div class="table-responsive">
+        <p-table #dt [value]="categories" [(selection)]="selectedCategories" dataKey="id" styleClass="p-datatable-customers" [rowHover]="true"
+                 [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" responsiveLayout="scroll"
+                 [paginator]="true" currentPageReportTemplate="Mostrar {first} a {last} de {totalRecords} categorias"
+                 [filterDelay]="0" [globalFilterFields]="['name', 'active', 'description', 'date_create']">
+            <ng-template pTemplate="caption">
+                <div class="bg-light- row flex align-items-center justify-content-end">
+                    <div class="col">
+                        <h5 class="m-0"></h5>
+                    </div>
+                    <div class="col d-flex  justify-content-end">
+                        <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt.filterGlobal(search.value, 'contains')" placeholder="Busqueda Global" #search/>
+                    </span>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header" class="bg-primary">
+                <tr>
+                    <th style="width: 10rem">Imagen</th>
+                    <th pSortableColumn="name">
+                        <div class="flex justify-content-between align-items-center">
+                            Nombre
+                            <p-sortIcon field="name"></p-sortIcon>
+                            <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
+                        </div>
+                    </th>
+                    <th pSortableColumn="description">
+                        <div class="flex justify-content-between align-items-center">
+                            Descripción
+                            <p-sortIcon field="description"></p-sortIcon>
+                            <p-columnFilter type="text" field="description" display="menu" class="ml-auto"></p-columnFilter>
+                        </div>
+                    </th>
+                    <th pSortableColumn="slug">
+                        <div class="flex justify-content-between align-items-center">
+                            Slug
+                            <p-sortIcon field="slug"></p-sortIcon>
+                            <p-columnFilter type="text" field="slug" display="menu" class="ml-auto"></p-columnFilter>
+                        </div>
+                    </th>
+                    <th pSortableColumn="date_create">
+                        <div class="flex justify-content-between align-items-center">
+                            Fecha de creación
+                            <p-sortIcon field="date_create"></p-sortIcon>
+                            <p-columnFilter type="text" field="date_create" display="menu" class="ml-auto"></p-columnFilter>
+                        </div>
+                    </th>
+                    <th style="width: 12rem">
+                        <div class="flex justify-content-end align-items-center">
+                            <span class="float-end">Acciones</span>
+                        </div>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-category let-ri="rowIndex">
+                <tr class="p-selectable-row">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="symbol me-5">
+                                <img [src]="category._id | image: 'categories' : category.image"
+                                     width="100px"
+                                     class="cursor-pointer"
+                                     [alt]="category.name"
+                                     (click)="editCategory(category)"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td (click)="editCategory(category)">
+                        <span class="p-column-title">nombre</span>
+                        {{category.name}}
+                    </td>
+                    <td (click)="editCategory(category)">
+                        <span class="p-column-title">descripcion</span>
+                        {{ category.description ? category.description:'' }}
+                    </td>
+                    <td (click)="editCategory(category)">
+                        <span class="p-column-title">slug</span>
+                        <span class="badge badge-light fs-7 fw-bold" *ngIf="category.active">{{ category.slug }}</span>
+                    </td>
+                    <td (click)="editCategory(category)">
+                        <span class="p-column-title">date_create</span>
+                        {{ category.date_create | date: 'dd/MMM/yyyy' }}
+                    </td>
+                    <td style="text-align: center" *ngIf="signedUser$ | async as _signedUser">
+                        <!--                        <button pButton type="button" class="p-button-secondary" icon="pi pi-cog"></button>-->
+                        <button type="button" (click)="active(category._id, !category.active)"
+                                [title]="category.active ? 'Desactivar':'Activar'"
+                                class="btn btn-icon btn-bg-light btn-sm me-1"
+                                [class.btn-active-color-danger]="category.active"
+                                [class.btn-active-color-success]="!category.active"
+                                *ngIf="_signedUser.id != category._id"
+                                [disabled]="isLoading">
+                            <ng-container *ngIf="!isLoading">
+                                <span [inlineSVG]="'./assets/media/icons/duotune/general/gen019.svg'" class="svg-icon svg-icon-3"></span>
+                            </ng-container>
+                            <ng-container *ngIf="isLoading">
+                                <span class="indicator-progress" [style.display]="'block'">
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                </span>
+                            </ng-container>
+                        </button>
+                        <button type="button" (click)="editCategory(category)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" title="Editar" [disabled]="isLoading">
+                            <ng-container *ngIf="!isLoading">
+                                <span [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'" class="svg-icon svg-icon-3"></span>
+                            </ng-container>
+                            <ng-container *ngIf="isLoading">
+                                <span class="indicator-progress" [style.display]="'block'">
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                </span>
+                            </ng-container>
+                        </button>
+                        <button type="button"
+                                title="Eliminar"
+                                *ngIf="_signedUser.id != category._id"
+                                (click)="delete(category._id)"
+                                class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm cursor-pointer"
+                                [disabled]="isLoading">
+                            <ng-container *ngIf="!isLoading">
+                                <span [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'" class="svg-icon svg-icon-3"></span>
+                            </ng-container>
+                            <ng-container *ngIf="isLoading">
+                                <span class="indicator-progress" [style.display]="'block'">
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                </span>
+                            </ng-container>
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="8">No se encontro ningun categoria.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<p-dialog [header]="create ? 'Crear Categoria':'Editar Categoria ' + category.name" [(visible)]="categoryDialog" [modal]="true" [style]="{width: '50vw'}"
+          [draggable]="false" [resizable]="false">
+    <ng-template pTemplate="body">
+        <form (ngSubmit)="saveCategory(formCreate)"  #formCreate="ngForm">
+            <img [src]="thumbnail" *ngIf="thumbnail" width="150px" class="img-fluid cursor-pointer" (click)="file.click()">
+            <img src="assets/media/misc/image.png" *ngIf="!imageInit && !thumbnail && !category.image" width="150px" class="img-fluid cursor-pointer" (click)="file.click()">
+            <img [src]="category._id | image: 'categories' : category.image" [alt]="category.image" width="150px" class="product-image cursor-pointer" *ngIf="category.image && !thumbnail" (click)="file.click()">
+            <input type="file" name="image" id="image" class="d-none" (change)="getImage($event)" #file accept="image/*">
+            <div class="p-fluid grid row">
+                <div class="field col-12 mt-5 pt-3">
+                  <span class="p-float-label">
+                      <input type="text" id="name" name="name" pInputText [(ngModel)]="category.name" autocomplete="off" required>
+                      <label for="name">Nombre</label>
+                  </span>
+                </div>
+            </div>
+            <div class="form-floating mt-3">
+                <textarea class="form-control" placeholder="Descripción breve" [(ngModel)]="category.description" name="description"  id="description" style="height: 100px"></textarea>
+                <label for="description">Descripción</label>
+            </div>
+            <div class="d-flex justify-content-end mt-5">
+                <p-button icon="pi pi-ban" (click)="categoryDialog=false" label="Cancelar" styleClass="p-button-rounded p-button-secondary p-button-text"></p-button>
+                <p-button type="submit" icon="pi pi-check"
+                          *ngIf="formCreate.valid"
+                          label="Guardar"
+                          styleClass="p-button-rounded p-button-success"></p-button>
+            </div>
+        </form>
+    </ng-template>
+</p-dialog>

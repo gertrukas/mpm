@@ -1,0 +1,35 @@
+<app-breadcrumbs [firstItem]="item" [search]="search"></app-breadcrumbs>
+
+<section class="pb-3">
+  <div class="row px-5 mb-3 text-end --titulo">
+    <h1 class="__titulo">Resultados</h1>
+  </div>
+  <h6>El total de resultado encontrados {{ countBlogs }}</h6>
+  <div class="--card -err"  *ngFor="let blog of blogs ">
+    <div class="row">
+      <div class="col-md-6">
+        <a [routerLink]="['/blog', blog.slug]">
+          <!--<img [src]="blog._id | image: 'news'"  [alt]="blog.name" class="img-fluid">-->
+          <img src="/assets/images/portada.jpg" class="img-fluid" alt="ejemplo">
+        </a>
+      </div>
+      <div class="col-md-6 px-3">
+        <div class="card-body">
+          <h1 class="-titulo">{{blog.name}}</h1>
+          <p class="card-text"><small class="text-muted">{{ blog.date | date: 'dd MMM yyyy'}}</small></p>
+          <div [innerHTML]="blog.intro | truncate: 200" class="-intro" ></div>
+          <div class="text-end">
+            <a [routerLink]="['/blog']" [queryParams]="{ slug: blog.slug }" class="-boton-azul btn btn-primary">ver mas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center" *ngIf="!isloading && blogs.length == 0">
+    <h1>No se encontraron resultados</h1>
+  </div>
+  <mat-spinner *ngIf="isloading"></mat-spinner>
+  <div class="text-end">
+    <a (click)="shearedPlus()" class="-boton-azul btn btn-primary">ver mas</a>
+  </div>
+</section>

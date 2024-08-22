@@ -1,0 +1,248 @@
+
+
+<app-breadcrumbs [firstItem]="item" [search]="search"></app-breadcrumbs>
+
+<section class="-col-2 __contacto">
+
+  <div class="d-flex align-items-center justify-content-center px-2 pb-2">
+z
+    <div class="card d-flex align-items-center justify-content-center p-4" >
+      <h1 class="text-white">HAGAMOS REALIDAD TU PROYECTO</h1>
+      <br>
+      <p class="">Si tienes alguna pregunta, comentario o sugerencia, no dudes en escribirnos. Tu opinión es muy importante para nosotros. Completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
+
+      <h2>¡Gracias por tu interés!</h2>
+
+    </div>
+
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center px-2 pb-2">
+
+    <div class="card px-4">
+
+      <div class="card-body" *ngIf="!sendCorrect">
+
+        <form class="form"
+              [formGroup]="contactForm"
+              (ngSubmit)="submit()">
+
+          <div class="mb-2">
+              <label class="form-label">
+                Nombre
+              </label>
+              <input type="text" placeholder="Por favor ingrese su nombre"
+                     name="name"
+                     formControlName="name"
+                     autocomplete="off"
+                     class="form-control"
+                     [ngClass]="{
+                     'is-invalid': contactForm.controls['name'].invalid && contactForm.controls['name'].value?.length > 0,
+                      'is-valid': contactForm.controls['name'].valid
+                     }"
+              >
+            <i class="fal fa-user"></i>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'required',
+                message: 'El nombre es requerido',
+                control: contactForm.controls['name']
+              }">
+            </ng-container>
+
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'minlength',
+                message: 'El nombre debe tener como mínimo 3',
+                control: contactForm.controls['name']
+              }">
+            </ng-container>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'maxlength',
+                message: 'El nombre debe tener como máximo 20',
+                control: contactForm.controls['name']
+              }">
+            </ng-container>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">
+              Correo
+            </label>
+            <input class="form-control" placeholder="Por favor ingrese su correo"
+                   type="email"
+                   name="email"
+                   formControlName="email"
+                   autocomplete="off"
+                   [ngClass]="{
+                      'is-invalid': contactForm.controls['email'].invalid && contactForm.controls['email'].value?.length > 0,
+                      'is-valid': contactForm.controls['email'].valid
+                   }">
+            <i class="fal fa-envelope"></i>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'required',
+                message: 'El correo es obligatorio',
+                control: contactForm.controls['email']
+              }">
+            </ng-container>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'email',
+                message: 'El correo no tiene el formato correcto',
+                control: contactForm.controls['email']
+              }">
+            </ng-container>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'minlength',
+                message: 'El correo debe contener mínimo 10 caracteres',
+                control: contactForm.controls['email']
+              }">
+            </ng-container>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'maxlength',
+                message: 'El correo debe contener mínimo 320 caracteres',
+                control: contactForm.controls['email']
+              }">
+            </ng-container>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">
+              Teléfono
+            </label>
+            <input class="form-control" placeholder="Por favor ingrese su teléfono"
+                   type="number"
+                   pattern="[0-9]{10}"
+                   name="phone"
+                   formControlName="phone"
+                   autocomplete="off"
+                   [ngClass]="{
+                      'is-invalid': contactForm.controls['phone'].invalid && contactForm.controls['phone'].value?.length > 0,
+                      'is-valid': contactForm.controls['phone'].valid
+                   }">
+            <i class="fal fa-user"></i>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'required',
+                message: 'El teléfono es requerido',
+                control: contactForm.controls['phone']
+              }">
+            </ng-container>
+
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'minlength',
+                message: 'El teléfono debe tener como mínimo 10',
+                control: contactForm.controls['phone']
+              }">
+            </ng-container>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'maxlength',
+                message: 'El teléfono debe tener como máximo 10',
+                control: contactForm.controls['phone']
+              }">
+            </ng-container>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">
+              Comentarios
+            </label>
+            <textarea placeholder="Mensaje" class="form-control"
+                      name="message"
+                      formControlName="message"
+                      autocomplete="off"
+                      [ngClass]="{
+                      'is-invalid': contactForm.controls['message'].invalid && contactForm.controls['message'].value?.length > 0,
+                      'is-valid': contactForm.controls['message'].valid
+                   }"></textarea>
+
+            <i class="fal fa-comments"></i>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'required',
+                message: 'El mensaje es obligatorio',
+                control: contactForm.controls['message']
+              }">
+            </ng-container>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'minlength',
+                message: 'El mensaje debe contener mínimo 20 caracteres',
+                control: contactForm.controls['message']
+              }">
+            </ng-container>
+            <ng-container
+              [ngTemplateOutlet]="formError"
+              [ngTemplateOutletContext]="{
+                validation: 'maxlength',
+                message: 'El mensaje debe contener máximo 500 caracteres',
+                control: contactForm.controls['message']
+              }">
+            </ng-container>
+          </div>
+          <br><br>
+          <button type="submit" class="btn btn-primary position-absolute end-0 "
+                  [disabled]="contactForm.invalid">
+            <ng-container *ngIf="isLoading">
+                <span class="indicator-progress" [style.display]="'block'">
+                  Esperé por favor...
+                  <span
+                    class="spinner-border spinner-border-sm align-middle ms-2"
+                  ></span>
+                </span>
+            </ng-container>
+            <ng-container *ngIf="!isLoading">
+              <span class="indicator-label">Enviar</span>
+            </ng-container>
+          </button>
+          <ng-template #formError
+                       let-control="control"
+                       let-message="message"
+                       let-validation="validation">
+            <ng-container *ngIf="control.hasError(validation) && (control.dirty || control.touched)">
+              <div class="fv-plugins-message-container">
+              <span role="alert">
+                {{ message }}
+              </span>
+              </div>
+            </ng-container>
+          </ng-template>
+        </form>
+      </div>
+      <div class="d-flex align-items-center justify-content-center">
+          <div *ngIf="sendCorrect">
+            <p> Su mensaje ah sido enviado</p>
+          </div>
+      </div>
+       <div class="d-flex align-items-center justify-content-center">
+        <div *ngIf="sendError">
+          <p> Se encontró un error al enviar el mensaje, intente mas tarde </p>
+        </div>
+        </div>
+
+    </div>
+
+
+
+  </div>
+
+
+</section>
