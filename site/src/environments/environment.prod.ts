@@ -8,5 +8,5 @@ export const environment = {
   pageUrl: 'https://loungeandfoodmpm.com/',
 
   proyecto: 'Lounge & Food MPM',
-  proyecto_url: 'loungeandfood.mpm.com'
+  proyecto_url: 'loungeandfoodmpm.com'
 };
