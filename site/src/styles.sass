@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap"
 @import "assets/sass/variables"
+@import "primeicons/primeicons.css"
 
 
 .-script
@@ -8,19 +9,27 @@
   font-weight: 300
   font-style: normal
 
-body
-  color: $-gris
-
-
 .-err
   border: 1px solid red
 
 .-err-green
-   border: 1px solid green
+  border: 1px solid green
+
+body
+  color: $-gris
+
+p
+  color: $-text
+  font-size: 1.2rem
 
 h1
   font-size: 34px
   font-weight: 400
+
+h2
+  color: $-title
+  font-weight: bold
+
 
 .--servicios
 
@@ -29,8 +38,6 @@ h1
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
     border-radius: 6px
     position: relative
-
-
 
 //------- botones --------
 //
@@ -50,6 +57,20 @@ h1
 .-btn-ver-mas:hover
     background-color: #8d8d8d
 
+.-btn, .-btn:active, .-btn:visited
+  color: white
+  background-color: $-color30
+  text-decoration: none
+  padding: 8px 28px 8px 28px
+  border-radius: 18px
+
+.-btn:hover
+  background-color: $-btn-azul
+
+
+button
+  border: 0
+
 //------------------------
 
 
@@ -62,11 +83,11 @@ h1
 
 
 .-titulo
-  color: $-color10
+  color: $-title
   font-weight: bold
 
 .-titulo-seccion
-  color: $-color10
+  color: $-title
   font-weight: bold
   font-size: 4rem
   text-align: center
@@ -76,10 +97,10 @@ h1
 
 .--titulo
   padding: 2px 20px 1px 0
-  margin-top: 10px
+  margin-top: 1px
   margin-bottom: 8px
   text-align: end
-  border-top: 1px solid $color10-claro
+  border-top: 1px solid $-title
 
 .__titulo
   color: $-color10

@@ -10,7 +10,7 @@
         <h1 class="-script">Bienvenídos a</h1>
         <h1 class="display-5">Lounge & Food<br>MPM</h1>
 
-        <p class="pt-5">Lo hacemos por ti!</p>
+        <p class="pt-5 text-white">Lo hacemos por ti!</p>
         <a class="btn btn-primary btn-lg px-4 gap-3" [routerLink]="['/somos']" role="button">Más información</a>
       </div>
 
@@ -131,70 +131,7 @@
   </section>
 
 
-  <section>
-    <div class="--titulo">
-      <h1 class="-titulo-seccion">Servicios</h1>
-    </div>
 
-    <div class="--servicios -col-3">
-
-      <div class="__card p-4">
-
-        <h4 class="-titulo text-center">Comedor empresarial</h4>
-        <img src="/assets/images/servicios/comedores-industriales.jpg" class="img-fluid pb-2" alt="ejemplo">
-
-        <p>Creamos ambiente de trabajo positivo, transformando espacios. Fomentamos salud y bienestar a las personas.</p>
-        <br>
-
-        <a class="-btn-ver-mas float-end" [routerLink]="['/servicios/comedor-empresarial']" role="button">Leer mas</a>
-      </div>
-
-
-      <div class="__card px-4 pt-4">
-        <h4 class="-titulo text-center">Eventos especiales</h4>
-        <img src="/assets/images/servicios/eventos-especiales.webp" class="img-fluid  pb-2" alt="ejemplo">
-
-        <p>Estamos contigo en cada momento.
-          <br>¡Nosotros nos hacemos cargo de todos tus eventos!
-        </p>
-        <br>
-        <a class="-btn-ver-mas float-end" [routerLink]="['/servicios/eventos-especiales']" role="button">Leer mas</a>
-
-
-      </div>
-
-      <div class="__card p-4">
-        <h4 class="-titulo text-center">Cafeterias</h4>
-        <img src="/assets/images/servicios/cafeterias.jpg" class="img-fluid  pb-2" alt="ejemplo">
-
-        <p>Contribuimos al bienestar de los colaboradores dentro de su espacio laboral, creando un ambiente agradable.</p>
-        <br>
-        <a class="-btn-ver-mas float-end" [routerLink]="['/servicios/cafeterias']" role="button">Leer mas</a>
-      </div>
-
-      <div class="__card p-4">
-        <h4 class="-titulo text-center">Catering</h4>
-        <img src="/assets/images/servicios/catering.webp" class="img-fluid  pb-2" alt="ejemplo">
-
-        <p>No tienes instalaciones
-          ¡Nosotros te llevamos!
-          Contamos con estructura, instalaciones y  unidades equipadas idóneas para la gestión de servicio de alimentación </p>
-        <br>
-        <a class="-btn-ver-mas float-end" [routerLink]="['/servicios/catering']" role="button">Leer mas</a>
-      </div>
-      <div class="__card p-4">
-        <h4 class="-titulo text-center">Desarrollo de proyectos</h4>
-        <img src="/assets/images/servicios/desarrollo-de-proyectos.jpg" class="img-fluid  pb-2" alt="ejemplo">
-
-        <p>Soluciones integrales que se adaptan a concepto, posibilidad y alcance.
-        </p>
-        <br>
-
-          <a class="-btn-ver-mas float-end" [routerLink]="['/servicios/desarrollo-de-proyectos']" role="button">Leer mas</a>
-
-      </div>
-    </div>
-  </section>
 
 
 
@@ -223,7 +160,7 @@
                   <div [innerHTML]="blog.intro | truncate: 200" class="-intro" ></div>
 
                   <div class="text-end">
-                    <a [routerLink]="['/blog', blog.slug ]" class="btn btn-primary">ver mas</a>
+                    <a [routerLink]="['/blog', blog.slug ]" class="-btn">ver mas</a>
                   </div>
 
                 </div>
@@ -234,15 +171,13 @@
         <mat-spinner *ngIf="isloading"></mat-spinner>
 
         <div class="text-end m-2">
-          <a (click)="getPlus()" class="-boton-azul btn btn-primary">ver mas comunicados</a>
+          <button (click)="getPlus()" class="-btn">ver mas comunicados</button>
         </div>
 
-    <div class="-pub-right text-end end m-2">
-      <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="-boton-azul btn btn-primary">
+    <div class="text-end m-2">
+      <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' class="-btn">
         ir al principio <i class="pi pi-arrow-up" style="font-size: 1.0rem"></i>
-
       </button>
-
     </div>
 
 

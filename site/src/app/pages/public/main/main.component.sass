@@ -2,7 +2,7 @@
 
 .--hero
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url("/assets/images/lounge-and-food-mpm-hero.jpg")
+  background-image:   url("/assets/images/lounge-and-food-mpm-hero.jpg")
 
   /* Set a specific height */
   height: 500px
@@ -21,15 +21,13 @@
 
 .-servicios .card
   box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05), inset -5px -5px 5px rgba(255, 255, 255,0.5),  5px 5px 5px rgba(0, 0, 0,0.05),  -5px -5px 5px rgba(255, 255, 255,0.5)
-  border-radius: 15px
+  border-radius: 5px
   margin: 10px
-
-
 
 .-servicios .card .box
   background: #ebf5fc
   box-shadow: 0 10px 20px rgba(0,0,0,0.1)
-  border-radius: 15px
+  border-radius: 5px
   transition: 0.5s
   margin: 10px
   padding: 10px
@@ -39,7 +37,7 @@
 .-servicios .card:hover .box
   transform: translateY(-20px)
   box-shadow: 0 10px 40px rgba(0,0,0,0.2)
-  background: linear-gradient(45deg,#b95ce4, #4f29cc)
+  background: linear-gradient(45deg, $-card-clear, $-card-dark)
 
 .-servicios .card .box .content
   text-align: center
@@ -50,7 +48,7 @@
 
 .-servicios .card .box .content h2
   font-size: 2em
-  color: $-color10
+  color: $-title
   transition: 0.5s
   height: 70px
   margin-bottom: 20px
@@ -79,11 +77,11 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.2)
 
 .-servicios .card:hover .box .content a
-  background: #ff568f
+  background: $-color30
   box-shadow: 0 20px 20px rgba(0,0,0,0.2)
 
 .-servicios .card .box .content a:hover
-  background: $-color30
+  background:  $-title
   box-shadow: 0 20px 20px rgba(0,0,0,0.2)
 
 .-servicios .card .box .content .-foot

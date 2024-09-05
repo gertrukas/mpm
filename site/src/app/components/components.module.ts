@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import {RouterLink} from "@angular/router";
 import { AlianzasComponent } from './shared/alianzas/alianzas.component';
 import { LasCertificacionesComponent } from './shared/las-certificaciones/las-certificaciones.component';
+import { AQuienServimosComponent } from './shared/a-quien-servimos/a-quien-servimos.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { LasCertificacionesComponent } from './shared/las-certificaciones/las-ce
     ServiciosBeneficiosComponent,
     AlianzasComponent,
     LasCertificacionesComponent,
+    AQuienServimosComponent,
 
 
   ],
@@ -36,6 +38,7 @@ import { LasCertificacionesComponent } from './shared/las-certificaciones/las-ce
     ServiciosBeneficiosComponent,
     AlianzasComponent,
     LasCertificacionesComponent,
+    AQuienServimosComponent,
 
   ],
     imports: [
