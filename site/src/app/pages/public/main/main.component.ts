@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getData();
+    //this.getData();
 
     this.title.setTitle('Lounge & food MPM les da la bienvenida')
     this.meta.addTag( { name: 'description', href: 'Desde 1997 contribuimos al bienestar y compromiso de las personas, facilitando la jornada laboral, mejorando la calidad de vida, productividad y resultados en las organizaciones.' });
