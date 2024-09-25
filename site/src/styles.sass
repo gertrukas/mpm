@@ -33,6 +33,16 @@ h2
   color: $-title
   font-weight: bold
 
+.-text-clear
+  color: $-title-clear
+
+.-text-dark
+   color: $-title
+
+
+.-bg-light
+  background-color: $-color30
+
 
 .--servicios
 
@@ -74,6 +84,57 @@ h2
 button
   border: 0
 
+//------- video --------
+//
+//
+//
+
+.video-titulo
+  height: 400px
+  width: 100%
+  position: relative
+
+
+.video-titulo video
+  width: 100%
+  height: 100%
+  position: absolute
+  object-fit: cover
+  z-index: 0
+
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-titulo .caption
+  z-index: 1
+  position: relative
+  text-align: center
+  color: #dc0000
+  padding: 10px
+
+
+  .-video
+
+  width: 100%
+  position: relative
+
+
+.-video video
+  width: 100%
+  height: 100%
+  position: absolute
+  object-fit: cover
+  z-index: 0
+
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.-video .caption
+  z-index: 1
+  position: relative
+  text-align: center
+  padding: 10px
+
+
+
 //------------------------
 
 
@@ -90,10 +151,14 @@ button
   font-weight: bold
 
 .-titulo-seccion
-  color: $-title
   font-weight: bold
   font-size: 4rem
   text-align: center
+
+.-title-clear
+  color: $-title-clear
+  font-size: 3rem
+  font-weight: bold
 
 .-titulo-gris
   color: $-gris-claro
@@ -130,6 +195,18 @@ span.size-20
     background-color: $-color30
     color: white
 
+.--card-azul-dark
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
+    border-radius: 6px
+    background-color: $-card-dark
+    color: white
+
+.--row-azul-dark
+  border-radius: 6px
+  background-color: $-card-dark
+  color: white
+
 
 //// social media icons
 //
@@ -161,12 +238,17 @@ span.size-20
   padding: 4px 0 4px 0
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
 
+
 .-col-3
   display: grid
-  width: 100%
-  gap: 20px
-  padding: 12px 12px 12px 12px
+
+  gap: 0px
+  padding: 4px 0 4px 0
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+
+.-span2
+  grid-column: span 2
+
 
 .-col-4
   display: grid
@@ -174,3 +256,5 @@ span.size-20
   gap: 0
   padding: 4px 0 4px 0
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+
+
