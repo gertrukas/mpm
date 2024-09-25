@@ -5,9 +5,16 @@
 
   <section class="pb-3">
 
-    <div class="--titulo">
-      <h1 class="-titulo-seccion">{{ this.titulo }}</h1>
-    </div>
+    <section>
+      <div class="video-titulo">
+        <video autoplay muted loop>
+          <source src="/assets/videos/catering.mp4" type="video/mp4" />
+        </video>
+        <div class="--titulo caption">
+          <h1 class="-titulo-seccion -text-clear">Catering</h1>
+        </div>
+      </div>
+    </section>
 
 
     <app-servicios-beneficios></app-servicios-beneficios>
@@ -52,17 +59,17 @@
             </ol>
 
 
-          <h2>A quien servimos</h2>
-
-          <app-a-quien-servimos></app-a-quien-servimos>
         </div>
 
-        <div class="d-flex align-items-center justify-content-center px-3 py-2">
+        <div class=" align-items-top justify-content-center px-3 py-2">
           <img src="/assets/images/servicios/catering.webp" class="img-fluid"  width="100%" alt="Catering">
         </div>
       </div>
 
+    </section>
 
+    <section>
+      <app-a-quien-servimos></app-a-quien-servimos>
     </section>
 
   </section>
