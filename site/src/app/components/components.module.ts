@@ -15,6 +15,7 @@ import {RouterLink} from "@angular/router";
 import { AlianzasComponent } from './shared/alianzas/alianzas.component';
 import { LasCertificacionesComponent } from './shared/las-certificaciones/las-certificaciones.component';
 import { AQuienServimosComponent } from './shared/a-quien-servimos/a-quien-servimos.component';
+import { MarqueeComponent } from './shared/marquee/marquee.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AQuienServimosComponent } from './shared/a-quien-servimos/a-quien-servi
     AlianzasComponent,
     LasCertificacionesComponent,
     AQuienServimosComponent,
+    MarqueeComponent,
 
 
   ],
@@ -39,6 +41,7 @@ import { AQuienServimosComponent } from './shared/a-quien-servimos/a-quien-servi
     AlianzasComponent,
     LasCertificacionesComponent,
     AQuienServimosComponent,
+    MarqueeComponent,
 
   ],
     imports: [

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Meta, Title} from "@angular/platform-browser";
 import {SEOService} from "../../../../services/seo.service";
+import {MarqueeComponent} from "../../../../components/shared/marquee/marquee.component";
 
 @Component({
   selector: 'app-eventos-especiales',

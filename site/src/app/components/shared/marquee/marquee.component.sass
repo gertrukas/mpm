@@ -1,0 +1,45 @@
+
+$duration: 60s
+$items: 6
+$itemWidth: 400px
+$itemHeight: 270px
+
+.wrapper
+  width: 96%
+  height: $itemHeight
+  max-width: 1536px
+  margin-inline: auto
+  position: relative
+  overflow: hidden
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0))
+
+
+
+////--------------- marquee ----------------
+@keyframes scrollLeft
+  to
+    left: calc(-1 * $itemWidth)
+
+.item
+  width: $itemWidth
+  height: $itemHeight
+  border-radius: 6px
+  position: absolute
+  left: max(calc($itemWidth * $items), 100%)
+  animation-name: scrollLeft
+  animation-duration: $duration
+  animation-timing-function: linear
+  animation-iteration-count: infinite
+
+.item1
+  animation-delay: calc($duration / $items * ($items - 1) * -1)
+.item2
+  animation-delay: calc($duration / $items * ($items - 2) * -1)
+.item3
+  animation-delay: calc($duration / $items * ($items - 3) * -1)
+.item4
+  animation-delay: calc($duration / $items * ($items - 4) * -1)
+.item5
+  animation-delay: calc($duration / $items * ($items - 5) * -1)
+.item6
+  animation-delay: calc($duration / $items * ($items - 6) * -1)
