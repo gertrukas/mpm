@@ -1,5 +1,13 @@
 @import "../../../../assets/sass/variables"
 
+/*--------------------------
+    |
+    |
+    |   hero section
+    |
+    |
+    */
+
 .--hero
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image:   url("/assets/images/lounge-and-food-mpm-hero.jpg")
@@ -16,6 +24,78 @@
   margin-top: 1px !important
 
   color: white
+
+  /*--------------------------
+    |
+    |
+    |   slide text
+    |
+    |
+    */
+
+.-script
+  transform: translateX(-100%)
+  animation: slideIn 2s ease forwards
+
+@keyframes slideIn
+   0%
+     opacity: 0
+     transform: translateX(-100%)
+   100%
+     opacity: 1
+     transform: translateX(0%)
+
+.-lounge
+  opacity: 0
+  transform: translateX(-100%)
+  animation: slideInLounge 2s ease forwards
+  animation-delay: 1s
+
+@keyframes slideInLounge
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+  100%
+    opacity: 1
+    transform: translateX(0%)
+
+
+.-lo-hacemos
+  transform: scale(0)
+  animation: fadeIn 2s ease forwards
+  animation-delay: 2s
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+    transform: scale(0)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+
+/*--------------------------
+    |
+    |
+    |   fade in images
+    |
+    |
+    */
+
+.-servicios img
+  animation: fade-in linear
+  animation-timeline: view()
+  animation-range-start: 80px
+  animation-range-end: 500px
+
+@keyframes fade-in
+  from
+    scale: .5
+    opacity: 0
+  to
+    scale: 1
+    opacity: 1
+
 
 
 
