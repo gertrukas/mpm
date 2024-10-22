@@ -3,22 +3,21 @@
 
   <app-breadcrumbs [firstItem]="item" [secondaryItem]="secondaryItem" [search]="search"></app-breadcrumbs>
 
-  <section class="pb-3">
+  <section>
+    <div class="d-flex justify-content-center">
 
-    <section>
-      <div class="video-titulo">
-        <video autoplay muted loop>
-          <source src="/assets/videos/cafeterias.mp4" type="video/mp4" />
-        </video>
-        <div class="--titulo caption">
-          <h1 class="-titulo-seccion text-white">Cafeterias</h1>
-        </div>
-      </div>
-    </section>
+      <h2 class="-titulo-video -text-clear">Cafeterías</h2>
 
-    <section class="mx-4 p-2">
-      <div class="-col-2">
-        <div class="  px-3">
+      <video autoplay loop muted playsinline class="" width="100%" height="auto">
+        <source src="/assets/videos/cafeterias.mp4" type="video/mp4">
+      </video>
+
+    </div>
+  </section>
+
+    <section class="mx-2 p-2">
+      <div class="row">
+        <div class="col-md-6 px-3">
           <h2>Definición</h2>
 
           <p>Contribuimos al bienestar de los colaboradores dentro de su espacio laboral, creando un ambiente agradable.</p>
@@ -42,7 +41,7 @@
 
         </div>
 
-        <div class="align-items-top justify-content-center px-3 py-2">
+        <div class="col-md-6 align-items-top justify-content-center px-3 py-2">
           <img src="/assets/images/servicios/cafeterias.webp" class="img-fluid"  width="100%" alt="Cafeterías">
           <br><br>
           <img src="/assets/images/servicios/cafeterias-panaderia.jpg" class="img-fluid"  width="100%" alt="Cafeterías">
@@ -52,10 +51,10 @@
 
     </section>
 
-    <section class="px-4">
+    <section class="px-2 pb-2">
       <app-a-quien-servimos></app-a-quien-servimos>
     </section>
 
-  </section>
+
 </main>
 

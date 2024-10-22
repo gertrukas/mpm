@@ -1,59 +1,51 @@
 <main>
 
   <app-breadcrumbs [firstItem]="item" [secondaryItem]="secondaryItem" [search]="search"></app-breadcrumbs>
+º <section>
+    <div class="d-flex justify-content-center">
 
+      <h2 class="-titulo-video -text-clear">Eventos especiales</h2>
 
+      <video autoplay loop muted playsinline class="" width="100%" height="auto">
+        <source src="/assets/videos/eventos-especiales.mp4" type="video/mp4">
+      </video>
 
-    <section class="pb-3">
+    </div>
+  </section>
 
-      <section>
+  <app-servicios-beneficios></app-servicios-beneficios>
 
-        <div class="video-titulo">
-          <video autoplay muted loop>
-            <source src="/assets/videos/eventos-especiales.mp4" type="video/mp4" />
-          </video>
-          <div class="--titulo caption">
-            <h1 class="-titulo-seccion text-white">Eventos especiales</h1>
-          </div>
-        </div>
+  <section class="mx-2 p-2">
 
-      </section>
+    <div class="row">
+      <div class="col-md-6   px-3">
+          <h2>Definición</h2>
+          <p>Eventos especiales es un servicio personalizado para cada necesidad de nuestros clientes con un menú acorde para sus invitados considerando siempre:</p>
 
-      <app-servicios-beneficios></app-servicios-beneficios>
+          <ul>
+            <li><p>Calidad</p></li>
+            <li><p>Presentación</p></li>
+            <li><p>Temperatura</p></li>
+            <li><p>Tiempo de entrega</p></li>
+          </ul>
 
-      <section class="mx-4 p-2">
+          <p>¡Nosotros nos hacemos cargo de todos tus eventos!</p>
+      </div>
 
-        <div class="-col-2">
-          <div class="  px-3">
-              <h2>Definición</h2>
-              <p>Eventos especiales es un servicio personalizado para cada necesidad de nuestros clientes con un menú acorde para sus invitados considerando siempre:</p>
+      <div class="col-md-6  align-items-top justify-content-center px-3 py-2">
+        <h2>Ventajas</h2>
+        <p>Contar con un equipo de profesionales que cuentan con gran experiencia en organización, planeación y ejecución de eventos que asesoran y apoyan a nuestros clientes para lograr el objetivo de cada evento especial, sin duda un gran apoyo para  lograr que ese día sea el mejor evento</p>
+      </div>
 
-              <ul>
-                <li><p>Calidad</p></li>
-                <li><p>Presentación</p></li>
-                <li><p>Temperatura</p></li>
-                <li><p>Tiempo de entrega</p></li>
-              </ul>
+    </div>
+  </section>
 
-              <p>¡Nosotros nos hacemos cargo de todos tus eventos!</p>
-          </div>
-
-          <div class=" align-items-top justify-content-center px-3 py-2">
-            <h2>Ventajas</h2>
-            <p>Contar con un equipo de profesionales que cuentan con gran experiencia en organización, planeación y ejecución de eventos que asesoran y apoyan a nuestros clientes para lograr el objetivo de cada evento especial, sin duda un gran apoyo para  lograr que ese día sea el mejor evento</p>
-          </div>
-
-        </div>
-
-        <app-marquee></app-marquee>
+    <app-marquee></app-marquee>
 
       <section>
-
-        <div class="m-4 p-0 rounded-3">
+        <div class="m-2 p-0 rounded-3">
           <app-a-quien-servimos></app-a-quien-servimos>
         </div>
       </section>
 
-
-
--->
+</main>
