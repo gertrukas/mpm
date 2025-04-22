@@ -8,7 +8,7 @@ import {Meta, Title} from "@angular/platform-browser";
   styleUrls: ['./comedor-empresarial.component.sass']
 })
 export class ComedorEmpresarialComponent {
-  secondaryItem: string = 'Comedor empresarial';
+  secondaryItem: string = 'Comedores industriales';
   item: string  = 'Servicios';
   search: boolean  = false;
   titulo: string = this.item;
