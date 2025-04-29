@@ -14,14 +14,7 @@ const routes: Routes = [
         title: 'Bienvenidos a Lounge & Food MPM'
 
       },
-      {
-        path: 'resultados',
-        loadChildren: () => import('./results/results.module').then(m => m.ResultsModule),
-      },
-      {
-        path: 'blog/:slug',
-        loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
-      },
+      
       { path: 'aviso-de-privacidad',
         loadChildren: () => import('./aviso/aviso-de-privacidad/aviso-de-privacidad.module').then(m => m.AvisoDePrivacidadModule),
       },
@@ -32,10 +25,6 @@ const routes: Routes = [
       {
         path: 'productos',
         loadChildren: () => import('./products/products.module').then(m => m.ProductsModule),
-      },
-      {
-        path: 'producto/:slug',
-        loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
       },
       {
         path: 'servicios/comedor-empresarial',
@@ -77,10 +66,7 @@ const routes: Routes = [
         path: 'contacto',
         loadChildren: () => import('./contacto/contacto.module').then(m => m.ContactoModule)
       },
-      {
-        path: 'comunicados',
-        loadChildren: () => import('./comunicados/comunicados.module').then(m => m.ComunicadosModule)
-      },
+      
 
 
     ]
