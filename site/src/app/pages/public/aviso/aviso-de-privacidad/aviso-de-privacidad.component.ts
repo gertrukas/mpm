@@ -11,6 +11,7 @@ export class AvisoDePrivacidadComponent{
 
   item: string  = 'Aviso de Privacidad';
   search: boolean  = false;
+  titulo: string = this.item;
 
   constructor(private title: Title,
               private meta: Meta,

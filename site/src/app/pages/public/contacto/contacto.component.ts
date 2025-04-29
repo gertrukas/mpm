@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {BehaviorSubject, first, Observable, Subscription} from "rxjs";
 import { GeneralService } from "../../../services/general.service";
+import {Meta, Title} from "@angular/platform-browser";
+import {SEOService} from "../../../services/seo.service";
 
 
 
@@ -36,17 +38,32 @@ export class ContactoComponent implements OnInit, OnDestroy{
   private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
 
 
-  constructor(private fb: FormBuilder,
-              private generalService: GeneralService) {
+  constructor(private title: Title,
+    private meta: Meta,
+    private seoService: SEOService,
+
+    private fb: FormBuilder,
+    private generalService: GeneralService) {
     const loadingSubscr = this.isLoading$
       .asObservable()
       .subscribe((res) => (this.isLoading = res));
     this.unsubscribe.push(loadingSubscr);
+
+
+
+
   }
 
   ngOnInit(): void{
+
     this.initForm();
     this.contactForm.controls['name'].setValue(undefined)
+
+    this.title.setTitle('Lounge & food MPM Contáctanos')
+    this.meta.addTag( { name: 'description', href: 'HAGAMOS REALIDAD TU PROYECTO' });
+    this.seoService.createLinkForCanonicalURL();
+
+
 
   }
 
