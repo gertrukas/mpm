@@ -9,8 +9,10 @@ import {Meta, Title} from "@angular/platform-browser";
 })
 
 export class SomosComponent {
+ 
   item: string  = 'Quienes Somos';
   search: boolean  = false;
+  titulo: string = this.item;
 
   constructor(private title: Title,
               private meta: Meta,

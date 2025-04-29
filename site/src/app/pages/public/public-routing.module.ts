@@ -43,10 +43,6 @@ const routes: Routes = [
         loadChildren: () => import('./servicios/catering/catering.module').then(m => m.CateringModule),
       },
       {
-        path: 'servicios/desarrollo-de-proyectos',
-        loadChildren: () => import('./servicios/desarrollo-de-proyectos/desarrollo-de-proyectos.module').then(m => m.DesarrolloDeProyectosModule),
-      },
-      {
         path: 'servicios/diseno-de-comedores',
         loadChildren: () => import('./servicios/desarrollo-de-proyectos/desarrollo-de-proyectos.module').then(m => m.DesarrolloDeProyectosModule),
       },
@@ -66,6 +62,7 @@ const routes: Routes = [
         path: 'contacto',
         loadChildren: () => import('./contacto/contacto.module').then(m => m.ContactoModule)
       },
+      
       
 
 
