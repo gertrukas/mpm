@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SEOService } from 'src/app/services/seo.service';
-import {Meta, Title} from "@angular/platform-browser";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-somos',
@@ -21,9 +21,11 @@ export class SomosComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM les da la bienvenida')
-    this.meta.addTag( { name: 'description', href: 'Desde 1997 contribuimos al bienestar y compromiso de las personas, facilitando la jornada laboral, mejorando la calidad de vida, productividad y resultados en las organizaciones.' });
+    this.title.setTitle('Lounge & food MPM les da la bienvenida');
+
+    this.meta.updateTag({ name: 'description', content: 'cambio de descripción' });
     this.seoService.createLinkForCanonicalURL();
+
 
   }
 

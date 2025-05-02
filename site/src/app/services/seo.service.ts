@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,10 +30,14 @@ export class SEOService {
     // link.setAttribute('href', this.doc.URL);*/
     //console.log('el canonical ---->', canonicalTag);
 
+    console.log('el url ---->', this.doc.URL);
+
     if (canonicalTag) {
+      console.log('si hay canonical tag');
       canonicalTag.parentNode?.removeChild(canonicalTag);
       this.meta.updateTag({ rel: 'canonical', href: this.doc.URL });
     } else {
+      console.log('NOOOO hay canonical tag');
       this.meta.addTag({ rel: 'canonical', href: this.doc.URL });
     }
   }

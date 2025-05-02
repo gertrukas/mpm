@@ -21,6 +21,7 @@ const routes: Routes = [
       {
         path: 'somos',
         loadChildren: () => import('./somos/somos/somos.module').then(m => m.SomosModule),
+        
       },
       {
         path: 'productos',
