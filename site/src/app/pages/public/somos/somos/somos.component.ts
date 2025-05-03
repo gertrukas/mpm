@@ -21,9 +21,8 @@ export class SomosComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM les da la bienvenida');
-
-    this.meta.updateTag({ name: 'description', content: 'cambio de descripción' });
+    this.seoService.setPageTitle('Lounge & food MPM les da la bienvenida');
+    this.seoService.setMetaDescription('cambio de descripción');
     this.seoService.createLinkForCanonicalURL();
 
 

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -8,7 +9,8 @@ import { DOCUMENT } from '@angular/common';
 })
 export class SEOService {
   constructor(private title: Title,
-              @Inject(DOCUMENT) private doc: any,
+              private router: Router,
+              @Inject(DOCUMENT) private doc: Document,
               private meta: Meta
               ) {
   }
@@ -19,27 +21,33 @@ export class SEOService {
     return this.title.getTitle();
   }
 
-  createLinkForCanonicalURL() {
-    //const head = this.doc.head;
-    const canonicalTag = this.meta.getTag('rel="canonical"');
-
-    let link: HTMLLinkElement = this.doc.createElement('link');
-
-    // link.setAttribute('rel', 'canonical');
-    // this.doc.head.appendChild(link);
-    // link.setAttribute('href', this.doc.URL);*/
-    //console.log('el canonical ---->', canonicalTag);
-
-    console.log('el url ---->', this.doc.URL);
-
-    if (canonicalTag) {
-      console.log('si hay canonical tag');
-      canonicalTag.parentNode?.removeChild(canonicalTag);
-      this.meta.updateTag({ rel: 'canonical', href: this.doc.URL });
-    } else {
-      console.log('NOOOO hay canonical tag');
-      this.meta.addTag({ rel: 'canonical', href: this.doc.URL });
+  setMetaDescription(description: string) {
+    const existingMeta = this.meta.getTag('name="description"');
+  
+    if (existingMeta) {
+      this.meta.removeTagElement(existingMeta);
     }
+  
+    this.meta.addTag({
+      name: 'description',
+      content: description
+    });
+  }
+
+  createLinkForCanonicalURL() {
+    const url = this.doc.location.origin + this.router.url;
+
+    // Buscar etiqueta canonical existente y eliminarla si existe
+    const existingLink = this.doc.head.querySelector("link[rel='canonical']");
+    if (existingLink) {
+      existingLink.remove();
+    }
+
+    // Crear y agregar nueva etiqueta canonical
+    const link: HTMLLinkElement = this.doc.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', url);
+    this.doc.head.appendChild(link);
   }
 
 

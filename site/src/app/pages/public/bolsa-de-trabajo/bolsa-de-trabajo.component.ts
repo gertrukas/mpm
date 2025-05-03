@@ -20,8 +20,8 @@ export class BolsaDeTrabajoComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM Bolsa de Trabajo')
-    this.meta.addTag( { name: 'description', href: 'Estamos buscando al mejor talento entre los profesionales que se quieran unir a nuestro equipo de trabajo' });
+    this.seoService.setPageTitle('Lounge & food MPM Bolsa de Trabajo');
+    this.seoService.setMetaDescription('Estamos buscando al mejor talento entre los profesionales que se quieran unir a nuestro equipo de trabajo');
     this.seoService.createLinkForCanonicalURL();
 
   }

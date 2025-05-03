@@ -20,8 +20,8 @@ export class AlianzasEstrategicasComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM Alianzas estratégicas')
-    this.meta.addTag( { name: 'description', href: '27 años apoyando a empresas en Certificaciones e implementaciones.' });
+    this.seoService.setPageTitle('Lounge & food MPM Alianzas estratégicas');
+    this.seoService.setMetaDescription('27 años apoyando a empresas en Certificaciones e implementaciones.');
     this.seoService.createLinkForCanonicalURL();
 
   }
