@@ -21,7 +21,7 @@ export class DesarrolloDeProyectosComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM servicio para el Diseño de comedores')
+    this.title.setTitle('Lounge & food MPM desarrollo de proyectos')
     this.meta.addTag( { name: 'description', href: 'DISEÑO DE COMEDORES: Soluciones integrales que se adaptan a concepto, posibilidad y alcance. Mejorando espacios para tú bienestar, optimizando la distribución y funcionalidad.' });
     this.seoService.createLinkForCanonicalURL();
 

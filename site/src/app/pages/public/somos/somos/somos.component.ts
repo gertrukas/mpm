@@ -21,8 +21,8 @@ export class SomosComponent {
 
   ngOnInit() {
 
-    this.seoService.setPageTitle('Lounge & food MPM les da la bienvenida');
-    this.seoService.setMetaDescription('cambio de descripción');
+    this.seoService.setPageTitle('titulo: Lounge & food MPM les da la bienvenida');
+    this.seoService.setMetaDescription('Alimentamos el Éxito de tu Empresa. Servicios de comedor industrial diseñados con excelencia, ética y un compromiso inquebrantable contigo.');
     this.seoService.createLinkForCanonicalURL();
 
 

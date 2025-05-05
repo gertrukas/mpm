@@ -21,11 +21,9 @@ export class CafeteriasComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM servicio de cafeterías')
-    this.meta.addTag( { name: 'description', href: 'Contribuimos al bienestar de los colaboradores dentro de su espacio laboral, creando un ambiente agradable.' });
+    this.title.setTitle('Lounge & food MPM servicio para cafeterías')
+    this.meta.updateTag( { name: 'description', href: 'Convierte cada pausa en un momento de inspiración. Nuestras cafeterías corporativas combinan sabor, comodidad y eficiencia, creando un espacio ideal para recargar energías.' });
     this.seoService.createLinkForCanonicalURL();
-
-
   }
 
 

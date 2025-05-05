@@ -21,10 +21,9 @@ export class CateringComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM servicio en desarrollo de proyectos')
-    this.meta.addTag( { name: 'description', href: '¡Sorprende a tus empleados con un catering que lo tiene todo! Diseñado para organizaciones sin cocina, nuestro servicio se adapta a tus horarios y necesidades.' });
+    this.title.setTitle('Lounge & food MPM servicio de catering')
+    this.meta.updateTag( { name: 'description', href: '¡Sorprende a tus empleados con un catering que lo tiene todo! Diseñado para organizaciones sin cocina, nuestro servicio se adapta a tus horarios y necesidades.' });
     this.seoService.createLinkForCanonicalURL();
-
 
   }
 }
