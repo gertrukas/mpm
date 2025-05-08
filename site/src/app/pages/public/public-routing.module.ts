@@ -23,10 +23,7 @@ const routes: Routes = [
         loadChildren: () => import('./somos/somos/somos.module').then(m => m.SomosModule),
         
       },
-      {
-        path: 'productos',
-        loadChildren: () => import('./products/products.module').then(m => m.ProductsModule),
-      },
+      
       {
         path: 'servicios/comedor-empresarial',
         loadChildren: () => import('./servicios/comedor-empresarial/comedor-empresarial.module').then(m => m.ComedorEmpresarialModule),
