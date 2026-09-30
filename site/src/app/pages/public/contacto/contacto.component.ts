@@ -58,8 +58,8 @@ export class ContactoComponent implements OnInit, OnDestroy{
 
     this.initForm();
     this.contactForm.controls['name'].setValue(undefined)
-   
-    this.title.setTitle('Lounge & food MPM Contáctanos')
+
+    this.title.setTitle('MPI - Contáctanos')
     this.meta.updateTag( { name: 'description', href: 'HAGAMOS REALIDAD TU PROYECTO' });
     this.seoService.createLinkForCanonicalURL();
 

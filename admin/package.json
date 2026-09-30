@@ -1,5 +1,5 @@
 {
-  "name": "Lounge & FooPASSWORDEMAILd MPM",
+  "name": "MPI",
   "version": "0.0.0",
   "scripts": {
     "ng:serve": "./node_modules/.bin/ng serve",

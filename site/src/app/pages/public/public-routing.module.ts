@@ -11,19 +11,19 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('./main/main.module').then(m => m.MainModule),
-        title: 'Bienvenidos a Lounge & Food MPM'
+        title: 'Bienvenidos a MPI'
 
       },
-      
+
       { path: 'aviso-de-privacidad',
         loadChildren: () => import('./aviso/aviso-de-privacidad/aviso-de-privacidad.module').then(m => m.AvisoDePrivacidadModule),
       },
       {
         path: 'somos',
         loadChildren: () => import('./somos/somos/somos.module').then(m => m.SomosModule),
-        
+
       },
-      
+
       {
         path: 'servicios/comedor-empresarial',
         loadChildren: () => import('./servicios/comedor-empresarial/comedor-empresarial.module').then(m => m.ComedorEmpresarialModule),
@@ -60,8 +60,8 @@ const routes: Routes = [
         path: 'contacto',
         loadChildren: () => import('./contacto/contacto.module').then(m => m.ContactoModule)
       },
-      
-      
+
+
 
 
     ]

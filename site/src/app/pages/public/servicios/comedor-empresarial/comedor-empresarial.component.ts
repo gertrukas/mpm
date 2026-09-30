@@ -21,7 +21,7 @@ export class ComedorEmpresarialComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM servicio de comedor empresarial')
+    this.title.setTitle('MPI servicio de comedor empresarial')
     this.meta.updateTag( { name: 'description', href: 'Servicio de comedor industrial con los mejores servicios, ingredientes y atención personalizada donde su personal podrá disfrutar de sana convivencia con una alimentación adecuada.' });
     this.seoService.createLinkForCanonicalURL();
 

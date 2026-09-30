@@ -9,7 +9,7 @@ import { Meta, Title } from "@angular/platform-browser";
 })
 
 export class SomosComponent {
- 
+
   item: string  = 'Quienes Somos';
   search: boolean  = false;
   titulo: string = this.item;
@@ -21,7 +21,7 @@ export class SomosComponent {
 
   ngOnInit() {
 
-    this.seoService.setPageTitle('titulo: Lounge & food MPM les da la bienvenida');
+    this.seoService.setPageTitle('titulo: MPI les da la bienvenida');
     this.seoService.setMetaDescription('Alimentamos el Éxito de tu Empresa. Servicios de comedor industrial diseñados con excelencia, ética y un compromiso inquebrantable contigo.');
     this.seoService.createLinkForCanonicalURL();
 

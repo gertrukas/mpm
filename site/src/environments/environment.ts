@@ -11,8 +11,8 @@ export const environment = {
   adminUrl: 'http://localhost:4200',
   pageUrl: 'http://localhost:4200',
 
-  proyecto: 'Lounge & Food MPM',
-  proyecto_url: 'loungeandfood.mpm.com'
+  proyecto: 'MPI',
+  proyecto_url: 'mpisolutionsgroup.com'
 };
 
 /*

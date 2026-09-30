@@ -20,7 +20,7 @@ export class CertificacionesComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM Certificaciones')
+    this.title.setTitle('MPI - Certificaciones')
     this.meta.updateTag( { name: 'description', href: 'Programas y certificaciones: Todos nuestros procedimientos en basados en normas NORMA Oficial Mexicana NOM-251-SSA1-2009 , nmx-f-605-normex-2016' });
     this.seoService.createLinkForCanonicalURL();
 

@@ -21,7 +21,7 @@ export class CafeteriasComponent {
 
   ngOnInit() {
 
-    this.title.setTitle('Lounge & food MPM servicio para cafeterías')
+    this.title.setTitle('MPI servicio para cafeterías')
     this.meta.updateTag( { name: 'description', href: 'Convierte cada pausa en un momento de inspiración. Nuestras cafeterías corporativas combinan sabor, comodidad y eficiencia, creando un espacio ideal para recargar energías.' });
     this.seoService.createLinkForCanonicalURL();
   }

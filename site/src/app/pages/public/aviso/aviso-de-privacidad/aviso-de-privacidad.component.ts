@@ -20,8 +20,8 @@ export class AvisoDePrivacidadComponent{
 
   ngOnInit() {
 
-    this.seoService.setPageTitle('Lounge & food MPM Avíso de privacidad');
-    this.seoService.setMetaDescription('Aviso dirigido a los titulares de datos personales que obran en posesión de Lounge & Food MPM.');
+    this.seoService.setPageTitle('MPI - Avíso de privacidad');
+    this.seoService.setMetaDescription('Aviso dirigido a los titulares de datos personales que obran en posesión de MPI.');
     this.seoService.createLinkForCanonicalURL();
 
   }
