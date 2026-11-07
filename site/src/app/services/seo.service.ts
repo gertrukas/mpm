@@ -23,11 +23,11 @@ export class SEOService {
 
   setMetaDescription(description: string) {
     const existingMeta = this.meta.getTag('name="description"');
-  
+
     if (existingMeta) {
       this.meta.removeTagElement(existingMeta);
     }
-  
+
     this.meta.addTag({
       name: 'description',
       content: description
