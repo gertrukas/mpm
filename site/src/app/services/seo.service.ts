@@ -34,8 +34,12 @@ export class SEOService {
     });
   }
 
+  // Dominio canónico fijo: evita que el SSR genere canonical con http:// o con www
+  // (el servidor SSR ve las peticiones internas por HTTP y eso contaminaba el canonical)
+  private readonly canonicalBaseUrl = 'https://mpisolutionsgroup.com';
+
   createLinkForCanonicalURL() {
-    const url = this.doc.location.origin + this.router.url;
+    const url = this.canonicalBaseUrl + this.router.url;
 
     // Buscar etiqueta canonical existente y eliminarla si existe
     const existingLink = this.doc.head.querySelector("link[rel='canonical']");
